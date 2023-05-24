@@ -1,0 +1,3 @@
+class GetUsersListAction {
+  const GetUsersListAction();
+}

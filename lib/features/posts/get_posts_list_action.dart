@@ -1,0 +1,3 @@
+class GetPostsListAction {
+  const GetPostsListAction();
+}

@@ -1,11 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux_overview/app/app_reducer.dart';
+import 'package:flutter_redux_overview/app/app_state.dart';
+import 'package:flutter_redux_overview/features/posts/posts_reducer.dart';
+import 'package:flutter_redux_overview/features/users/users_reducers.dart';
+import 'package:redux/redux.dart';
 
 void main() {
-  runApp(const MyApp());
+  const reducer = AppReducer(
+    usersReducers: UsersReducers(),
+    postsReducers: PostsReducers(),
+  );
+
+  final store = Store<AppState>(
+    reducer.appStateReducer,
+    initialState: const AppState(),
+  );
+
+  runApp(const ReduxApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class ReduxApp extends StatelessWidget {
+  const ReduxApp({super.key});
 
   // This widget is the root of your application.
   @override

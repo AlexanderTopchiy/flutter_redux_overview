@@ -1,12 +1,35 @@
-import 'package:flutter_redux_overview/features/posts/post.dart';
-import 'package:flutter_redux_overview/features/users/user.dart';
+import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter_redux_overview/features/post/redux/post_state.dart';
+import 'package:flutter_redux_overview/features/user/redux/user_state.dart';
 
-class AppState {
-  final List<User> usersList;
-  final List<Post> postsList;
+@immutable
+class AppState extends Equatable {
+  final UserState userState;
+  final PostState postState;
 
   const AppState({
-    this.usersList = const [],
-    this.postsList = const [],
+    required this.userState,
+    required this.postState,
   });
+
+  factory AppState.initial() => AppState(
+        userState: UserState.initial(),
+        postState: PostState.initial(),
+      );
+
+  @override
+  List<Object?> get props => [
+        userState,
+        postState,
+      ];
+
+  AppState copyWith({
+    UserState? userState,
+    PostState? postState,
+  }) =>
+      AppState(
+        userState: userState ?? this.userState,
+        postState: postState ?? this.postState,
+      );
 }

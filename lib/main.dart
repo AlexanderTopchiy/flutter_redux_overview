@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_redux_overview/app/app_reducer.dart';
 import 'package:flutter_redux_overview/app/app_state.dart';
-import 'package:flutter_redux_overview/features/posts/posts_reducer.dart';
-import 'package:flutter_redux_overview/features/users/users_reducers.dart';
+import 'package:flutter_redux_overview/core/di.dart';
+import 'package:flutter_redux_overview/features/user/redux/user_actions.dart';
 import 'package:redux/redux.dart';
 
 void main() {
-  const reducer = AppReducer(
-    usersReducers: UsersReducers(),
-    postsReducers: PostsReducers(),
-  );
+  DI.register();
 
-  final store = Store<AppState>(
-    reducer.appStateReducer,
-    initialState: const AppState(),
-  );
+  final store = DI.get<Store<AppState>>();
+  print(store.state.userState.userList);
+  store.dispatch(const GetUserListAction());
+  print(store.state.userState.userList);
 
   runApp(const ReduxApp());
 }

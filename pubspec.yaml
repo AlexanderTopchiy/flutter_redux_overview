@@ -7,7 +7,7 @@ version: 1.0.0+1
 
 
 environment:
-  sdk: '>=2.19.6 <3.0.0'
+  sdk: '>=3.0.0 <4.0.0'
 
 
 dependencies:
@@ -16,6 +16,12 @@ dependencies:
 
   # State management
   redux: 5.0.0
+
+  # DI
+  get_it: 7.6.0
+
+  # Model
+  equatable: 2.0.5
 
   # UI
   cupertino_icons: 1.0.2

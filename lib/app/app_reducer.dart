@@ -1,18 +1,8 @@
 import 'package:flutter_redux_overview/app/app_state.dart';
-import 'package:flutter_redux_overview/features/posts/posts_reducer.dart';
-import 'package:flutter_redux_overview/features/users/users_reducers.dart';
+import 'package:flutter_redux_overview/features/post/redux/post_reducer.dart';
+import 'package:flutter_redux_overview/features/user/redux/user_reducer.dart';
 
-class AppReducer {
-  final UsersReducers usersReducers;
-  final PostsReducers postsReducers;
-
-  const AppReducer({
-    required this.usersReducers,
-    required this.postsReducers,
-  });
-
-  AppState appStateReducer(AppState state, action) => AppState(
-        usersList: usersReducers.getUsersList(state.usersList, action),
-        postsList: postsReducers.getPostsList(state.postsList, action),
-      );
-}
+AppState appReducer(AppState state, action) => AppState(
+      userState: userReducer(state.userState, action),
+      postState: postReducer(state.postState, action),
+    );

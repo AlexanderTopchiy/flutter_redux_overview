@@ -7,11 +7,11 @@ PostState postReducer(
   dynamic action,
 ) =>
     switch (action) {
-      GetPostListAction() => _getPostList(state),
+      FetchPostListAction() => _fetchPostList(state),
       _ => state,
     };
 
-PostState _getPostList(PostState state) => state.copyWith(
+PostState _fetchPostList(PostState state) => state.copyWith(
       postList: const [
         Post(id: 0, text: 'The zero post'),
         Post(id: 1, text: 'The first post'),

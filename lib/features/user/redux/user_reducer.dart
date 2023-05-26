@@ -7,11 +7,11 @@ UserState userReducer(
   dynamic action,
 ) =>
     switch (action) {
-      GetUserListAction() => _getUserList(state),
+      FetchUserListAction() => _fetchUserList(state),
       _ => state,
     };
 
-UserState _getUserList(UserState state) => state.copyWith(
+UserState _fetchUserList(UserState state) => state.copyWith(
       userList: const [
         User(id: 0, name: 'The Zero'),
         User(id: 1, name: 'The One'),

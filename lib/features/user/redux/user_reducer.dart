@@ -1,4 +1,4 @@
-import 'package:flutter_redux_overview/features/user/model/user.dart';
+import 'package:flutter_redux_overview/features/common/model/loading_status.dart';
 import 'package:flutter_redux_overview/features/user/redux/user_actions.dart';
 import 'package:flutter_redux_overview/features/user/redux/user_state.dart';
 
@@ -7,15 +7,15 @@ UserState userReducer(
   dynamic action,
 ) =>
     switch (action) {
-      FetchUserListAction() => _fetchUserList(state),
+      FetchingUserListAction() => state.copyWith(
+          status: LoadingStatus.loading,
+        ),
+      FetchUserListSuccessAction(userList: var userList) => state.copyWith(
+          status: LoadingStatus.success,
+          userList: userList,
+        ),
+      FetchUserListErrorAction() => state.copyWith(
+          status: LoadingStatus.error,
+        ),
       _ => state,
     };
-
-UserState _fetchUserList(UserState state) => state.copyWith(
-      userList: const [
-        User(id: 0, name: 'The Zero'),
-        User(id: 1, name: 'The One'),
-        User(id: 2, name: 'The Two'),
-        User(id: 3, name: 'The Three'),
-      ],
-    );

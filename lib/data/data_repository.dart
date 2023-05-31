@@ -18,7 +18,7 @@ class DataRepository {
       throw const NetworkException();
     }
 
-    return [ for (final json in response.data) User.fromJson(json) ];
+    return [for (final json in response.data) User.fromJson(json)];
   }
 
   Future<List<Post>> fetchPostList() async {
@@ -28,6 +28,6 @@ class DataRepository {
       throw const NetworkException();
     }
 
-    return [ for (final json in response.data) Post.fromJson(json) ];
+    return [for (final json in response.data) Post.fromJson(json)];
   }
 }

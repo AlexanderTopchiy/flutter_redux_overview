@@ -1,5 +1,8 @@
+import 'package:dio/dio.dart';
 import 'package:flutter_redux_overview/app/app_state.dart';
 import 'package:flutter_redux_overview/app/app_store.dart';
+import 'package:flutter_redux_overview/data/api_constants.dart';
+import 'package:flutter_redux_overview/data/data_repository.dart';
 import 'package:get_it/get_it.dart';
 import 'package:redux/redux.dart';
 
@@ -21,5 +24,8 @@ abstract class DI {
 
   static void register() {
     _di.registerLazySingleton<Store<AppState>>(createStore);
+
+    final dio = Dio(BaseOptions(baseUrl: ApiConstants.baseUrl));
+    _di.registerLazySingleton<DataRepository>(() => DataRepository(client: dio));
   }
 }

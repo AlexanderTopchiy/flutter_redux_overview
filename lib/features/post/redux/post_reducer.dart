@@ -13,8 +13,8 @@ PostState postReducer(
 
 PostState _fetchPostList(PostState state) => state.copyWith(
       postList: const [
-        Post(id: 0, text: 'The zero post'),
-        Post(id: 1, text: 'The first post'),
-        Post(id: 2, text: 'The second post'),
+        Post(id: 0, title: 'The zero post', body: 'Post body'),
+        Post(id: 1, title: 'The first post', body: 'Post body'),
+        Post(id: 2, title: 'The second post', body: 'Post body'),
       ],
     );

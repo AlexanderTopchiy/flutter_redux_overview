@@ -24,6 +24,9 @@ dependencies:
   # Model
   equatable: 2.0.5
 
+  # Network
+  dio: 5.1.2
+
   # UI
   cupertino_icons: 1.0.2
 

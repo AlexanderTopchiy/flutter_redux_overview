@@ -22,7 +22,7 @@ class DataRepository {
   }
 
   Future<List<Post>> fetchPostList() async {
-    final response = await client.get(ApiConstants.getUsers);
+    final response = await client.get(ApiConstants.getPosts);
 
     if (response.statusCode != 200) {
       throw const NetworkException();

@@ -1,5 +1,5 @@
+import 'package:flutter_redux_overview/features/common/model/loading_status.dart';
 import 'package:flutter_redux_overview/features/post/redux/post_actions.dart';
-import 'package:flutter_redux_overview/features/post/model/post.dart';
 import 'package:flutter_redux_overview/features/post/redux/post_state.dart';
 
 PostState postReducer(
@@ -7,14 +7,15 @@ PostState postReducer(
   dynamic action,
 ) =>
     switch (action) {
-      FetchPostListAction() => _fetchPostList(state),
+      FetchingPostListAction() => state.copyWith(
+          status: LoadingStatus.loading,
+        ),
+      FetchPostListSuccessAction(postList: var postList) => state.copyWith(
+          status: LoadingStatus.success,
+          postList: postList,
+        ),
+      FetchPostListErrorAction() => state.copyWith(
+          status: LoadingStatus.error,
+        ),
       _ => state,
     };
-
-PostState _fetchPostList(PostState state) => state.copyWith(
-      postList: const [
-        Post(id: 0, title: 'The zero post', body: 'Post body'),
-        Post(id: 1, title: 'The first post', body: 'Post body'),
-        Post(id: 2, title: 'The second post', body: 'Post body'),
-      ],
-    );

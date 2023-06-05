@@ -67,6 +67,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Error while fetching user list`
+  String get networkError {
+    return Intl.message(
+      'Error while fetching user list',
+      name: 'networkError',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

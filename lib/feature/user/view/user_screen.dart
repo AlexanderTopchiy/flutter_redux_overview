@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_redux_overview/app/app_state.dart';
-import 'package:flutter_redux_overview/features/common/model/loading_status.dart';
-import 'package:flutter_redux_overview/features/user/redux/user_actions.dart';
-import 'package:flutter_redux_overview/features/user/view/components/user_list.dart';
-import 'package:flutter_redux_overview/features/user/view/user_screen_view_model.dart';
+import 'package:flutter_redux_overview/feature/common/component/card_list.dart';
+import 'package:flutter_redux_overview/feature/common/model/loading_status.dart';
+import 'package:flutter_redux_overview/feature/user/model/user.dart';
+import 'package:flutter_redux_overview/feature/user/redux/user_actions.dart';
+import 'package:flutter_redux_overview/feature/user/view/user_screen_view_model.dart';
 import 'package:flutter_redux_overview/generated/l10n.dart';
 
 class UserScreen extends StatelessWidget {
@@ -39,8 +40,8 @@ class _UserScreenContent extends StatelessWidget {
         onRefresh: () async => viewModel.onRefresh(),
         child: switch (viewModel.status) {
           LoadingStatus.idle || LoadingStatus.loading => const Center(child: CircularProgressIndicator()),
-          LoadingStatus.success => UserList(userList: viewModel.userList),
-          LoadingStatus.error => const Text('Error while fetching user list'),
+          LoadingStatus.success => CardList<User>(itemList: viewModel.userList),
+          LoadingStatus.error => Text(S.current.networkError),
         },
       ),
     );

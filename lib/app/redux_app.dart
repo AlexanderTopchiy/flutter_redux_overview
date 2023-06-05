@@ -3,7 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_redux_overview/app/app_state.dart';
 import 'package:flutter_redux_overview/core/di.dart';
-import 'package:flutter_redux_overview/features/user/view/user_screen.dart';
+import 'package:flutter_redux_overview/feature/user/view/user_screen.dart';
 import 'package:flutter_redux_overview/generated/l10n.dart';
 import 'package:redux/redux.dart';
 

@@ -1,4 +1,4 @@
-import 'package:flutter_redux_overview/features/post/model/post.dart';
+import 'package:flutter_redux_overview/feature/post/model/post.dart';
 
 class FetchPostListAction {
   const FetchPostListAction();

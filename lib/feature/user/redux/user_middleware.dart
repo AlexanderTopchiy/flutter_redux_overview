@@ -1,6 +1,6 @@
 import 'package:flutter_redux_overview/app/app_state.dart';
 import 'package:flutter_redux_overview/data/data_repository.dart';
-import 'package:flutter_redux_overview/features/user/redux/user_actions.dart';
+import 'package:flutter_redux_overview/feature/user/redux/user_actions.dart';
 import 'package:redux/redux.dart';
 
 class UserMiddleware extends MiddlewareClass<AppState> {

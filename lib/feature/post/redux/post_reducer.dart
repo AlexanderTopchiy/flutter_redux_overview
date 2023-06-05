@@ -1,6 +1,6 @@
-import 'package:flutter_redux_overview/features/common/model/loading_status.dart';
-import 'package:flutter_redux_overview/features/post/redux/post_actions.dart';
-import 'package:flutter_redux_overview/features/post/redux/post_state.dart';
+import 'package:flutter_redux_overview/feature/common/model/loading_status.dart';
+import 'package:flutter_redux_overview/feature/post/redux/post_actions.dart';
+import 'package:flutter_redux_overview/feature/post/redux/post_state.dart';
 
 PostState postReducer(
   PostState state,

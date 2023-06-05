@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_redux_overview/features/user/model/user.dart';
-import 'package:flutter_redux_overview/features/user/view/components/user_card.dart';
+import 'package:flutter_redux_overview/feature/common/component/card_item.dart';
+import 'package:flutter_redux_overview/feature/post/model/post.dart';
+import 'package:flutter_redux_overview/feature/user/model/user.dart';
 
-class UserList extends StatelessWidget {
-  final List<User> userList;
+class CardList<Object> extends StatelessWidget {
+  final List<Object> itemList;
 
-  const UserList({
+  const CardList({
     super.key,
-    required this.userList,
+    required this.itemList,
   });
 
   @override
@@ -15,7 +16,11 @@ class UserList extends StatelessWidget {
     return ListView.separated(
       padding: const EdgeInsets.symmetric(horizontal: 24),
       itemBuilder: (_, index) {
-        final item = UserCard(user: userList[index]);
+        final item = switch (Object) {
+          User => CardItem(item: itemList[index] as User),
+          Post => CardItem(item: itemList[index] as Post),
+          _ => const SizedBox(),
+        };
 
         if (index == 0) {
           return Padding(
@@ -24,7 +29,7 @@ class UserList extends StatelessWidget {
           );
         }
 
-        if (index == userList.length - 1) {
+        if (index == itemList.length - 1) {
           return Padding(
             padding: const EdgeInsets.only(bottom: 24),
             child: item,
@@ -34,7 +39,7 @@ class UserList extends StatelessWidget {
         return item;
       },
       separatorBuilder: (_, __) => const SizedBox(height: 10),
-      itemCount: userList.length,
+      itemCount: itemList.length,
     );
   }
 }

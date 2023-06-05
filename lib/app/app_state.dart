@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_redux_overview/features/post/redux/post_state.dart';
-import 'package:flutter_redux_overview/features/user/redux/user_state.dart';
+import 'package:flutter_redux_overview/feature/post/redux/post_state.dart';
+import 'package:flutter_redux_overview/feature/user/redux/user_state.dart';
 
 @immutable
 class AppState extends Equatable {

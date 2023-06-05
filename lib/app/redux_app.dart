@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_redux_overview/app/app_state.dart';
 import 'package:flutter_redux_overview/core/di.dart';
 import 'package:flutter_redux_overview/features/user/view/user_screen.dart';
+import 'package:flutter_redux_overview/generated/l10n.dart';
 import 'package:redux/redux.dart';
 
 class ReduxApp extends StatelessWidget {
@@ -13,12 +15,17 @@ class ReduxApp extends StatelessWidget {
     return StoreProvider<AppState>(
       store: DI.get<Store<AppState>>(),
       child: MaterialApp(
-        title: 'Redux overview',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
         ),
+        localizationsDelegates: const [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: S.delegate.supportedLocales,
         home: const UserScreen(),
-        // TODO Localization
       ),
     );
   }

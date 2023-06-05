@@ -5,6 +5,7 @@ import 'package:flutter_redux_overview/features/common/model/loading_status.dart
 import 'package:flutter_redux_overview/features/user/redux/user_actions.dart';
 import 'package:flutter_redux_overview/features/user/view/components/user_list.dart';
 import 'package:flutter_redux_overview/features/user/view/user_screen_view_model.dart';
+import 'package:flutter_redux_overview/generated/l10n.dart';
 
 class UserScreen extends StatelessWidget {
   const UserScreen({super.key});
@@ -31,7 +32,9 @@ class _UserScreenContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text(S.current.users),
+      ),
       body: RefreshIndicator(
         onRefresh: () async => viewModel.onRefresh(),
         child: switch (viewModel.status) {

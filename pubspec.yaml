@@ -27,6 +27,9 @@ dependencies:
   # Network
   dio: 5.1.2
 
+  # Navigation
+  go_router: 7.1.1
+
   # UI
   cupertino_icons: 1.0.2
 

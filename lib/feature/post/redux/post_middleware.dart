@@ -1,4 +1,4 @@
-import 'package:flutter_redux_overview/app/app_state.dart';
+import 'package:flutter_redux_overview/app/redux/app_state.dart';
 import 'package:flutter_redux_overview/data/data_repository.dart';
 import 'package:flutter_redux_overview/feature/post/redux/post_actions.dart';
 import 'package:redux/redux.dart';

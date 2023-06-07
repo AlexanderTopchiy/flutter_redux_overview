@@ -1,5 +1,5 @@
-import 'package:flutter_redux_overview/app/app_reducer.dart';
-import 'package:flutter_redux_overview/app/app_state.dart';
+import 'package:flutter_redux_overview/app/redux/app_reducer.dart';
+import 'package:flutter_redux_overview/app/redux/app_state.dart';
 import 'package:flutter_redux_overview/core/di.dart';
 import 'package:flutter_redux_overview/feature/post/redux/post_middleware.dart';
 import 'package:flutter_redux_overview/feature/user/redux/user_middleware.dart';

@@ -3,29 +3,29 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_redux_overview/app/redux/app_state.dart';
 import 'package:flutter_redux_overview/feature/common/component/card_list.dart';
 import 'package:flutter_redux_overview/feature/common/model/loading_status.dart';
-import 'package:flutter_redux_overview/feature/user/model/user.dart';
-import 'package:flutter_redux_overview/feature/user/redux/user_actions.dart';
-import 'package:flutter_redux_overview/feature/user/view/user_screen_view_model.dart';
+import 'package:flutter_redux_overview/feature/post/model/post.dart';
+import 'package:flutter_redux_overview/feature/post/redux/post_actions.dart';
+import 'package:flutter_redux_overview/feature/post/view/post_screen_view_model.dart';
 import 'package:flutter_redux_overview/generated/l10n.dart';
 
-class UserScreen extends StatelessWidget {
-  const UserScreen({super.key});
+class PostScreen extends StatelessWidget {
+  const PostScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return StoreConnector<AppState, UserScreenViewModel>(
+    return StoreConnector<AppState, PostScreenViewModel>(
       distinct: true,
-      onInit: (store) => store.dispatch(const FetchUserListAction()),
-      converter: (store) => UserScreenViewModel.fromStore(store),
-      builder: (context, viewModel) => _UserScreenContent(viewModel: viewModel),
+      onInit: (store) => store.dispatch(const FetchPostListAction()),
+      converter: (store) => PostScreenViewModel.fromStore(store),
+      builder: (context, viewModel) => _PostScreenContent(viewModel: viewModel),
     );
   }
 }
 
-class _UserScreenContent extends StatelessWidget {
-  final UserScreenViewModel viewModel;
+class _PostScreenContent extends StatelessWidget {
+  final PostScreenViewModel viewModel;
 
-  const _UserScreenContent({
+  const _PostScreenContent({
     Key? key,
     required this.viewModel,
   }) : super(key: key);
@@ -34,13 +34,13 @@ class _UserScreenContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(S.current.users),
+        title: Text(S.current.posts),
       ),
       body: RefreshIndicator(
         onRefresh: () async => viewModel.onRefresh(),
         child: switch (viewModel.status) {
           LoadingStatus.idle || LoadingStatus.loading => const Center(child: CircularProgressIndicator()),
-          LoadingStatus.success => CardList<User>(itemList: viewModel.userList),
+          LoadingStatus.success => CardList<Post>(itemList: viewModel.postList),
           LoadingStatus.error => Text(S.current.networkError),
         },
       ),

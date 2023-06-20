@@ -5,7 +5,6 @@ import 'package:flutter_redux_overview/app/app_router.dart';
 import 'package:flutter_redux_overview/app/redux/app_state.dart';
 import 'package:flutter_redux_overview/core/di.dart';
 import 'package:flutter_redux_overview/generated/l10n.dart';
-import 'package:redux/redux.dart';
 
 class ReduxApp extends StatelessWidget {
   const ReduxApp({super.key});
@@ -13,7 +12,7 @@ class ReduxApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StoreProvider<AppState>(
-      store: DI.get<Store<AppState>>(),
+      store: DI.get(),
       child: MaterialApp.router(
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),

@@ -1,8 +1,6 @@
 name: flutter_redux_overview
 description: An overview of the Redux architecture pattern in Flutter.
-
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-
+publish_to: 'none'
 version: 1.0.0+1
 
 environment:
@@ -13,30 +11,23 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-
   # State management
   redux: 5.0.0
   flutter_redux: 0.10.0
-
   # DI
   get_it: 7.6.0
-
   # Model
   equatable: 2.0.5
-
   # Network
   dio: 5.1.2
-
   # Navigation
   go_router: 7.1.1
-
-  # UI
-  cupertino_icons: 1.0.2
+  # Testing
+  mocktail: 0.3.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   flutter_lints: 2.0.0
 
 flutter:

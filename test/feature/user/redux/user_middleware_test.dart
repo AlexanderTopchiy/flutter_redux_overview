@@ -27,7 +27,7 @@ void main() {
     late final MockDataRepository repository;
     late final UserMiddleware middleware;
 
-    setUp(() {
+    setUpAll(() {
       store = MockStore();
       repository = MockDataRepository();
       middleware = UserMiddleware(repository: repository);

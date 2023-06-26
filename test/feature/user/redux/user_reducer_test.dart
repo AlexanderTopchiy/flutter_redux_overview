@@ -1,5 +1,5 @@
 import 'package:flutter_redux_overview/feature/common/model/loading_status.dart';
-import 'package:flutter_redux_overview/feature/user/model/user.dart';
+import 'package:flutter_redux_overview/data/model/user.dart';
 import 'package:flutter_redux_overview/feature/user/redux/user_actions.dart';
 import 'package:flutter_redux_overview/feature/user/redux/user_reducer.dart';
 import 'package:flutter_redux_overview/feature/user/redux/user_state.dart';

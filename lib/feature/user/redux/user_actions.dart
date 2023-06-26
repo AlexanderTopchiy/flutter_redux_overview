@@ -1,4 +1,4 @@
-import 'package:flutter_redux_overview/feature/user/model/user.dart';
+import 'package:flutter_redux_overview/data/model/user.dart';
 
 class FetchUserListAction {
   const FetchUserListAction();

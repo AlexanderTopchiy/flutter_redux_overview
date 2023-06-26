@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_redux_overview/feature/post/model/post.dart';
-import 'package:flutter_redux_overview/feature/user/model/user.dart';
+import 'package:flutter_redux_overview/data/model/post.dart';
+import 'package:flutter_redux_overview/data/model/user.dart';
 
 class CardItem extends StatelessWidget {
   final Object item;

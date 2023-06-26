@@ -1,5 +1,5 @@
 import 'package:flutter_redux_overview/feature/common/model/loading_status.dart';
-import 'package:flutter_redux_overview/feature/post/model/post.dart';
+import 'package:flutter_redux_overview/data/model/post.dart';
 import 'package:flutter_redux_overview/feature/post/view/post_screen_view_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 

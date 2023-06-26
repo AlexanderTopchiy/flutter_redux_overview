@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_redux_overview/feature/common/model/loading_status.dart';
-import 'package:flutter_redux_overview/feature/user/model/user.dart';
+import 'package:flutter_redux_overview/data/model/user.dart';
 
 @immutable
 class UserState extends Equatable {

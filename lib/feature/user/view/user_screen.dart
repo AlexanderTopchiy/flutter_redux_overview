@@ -3,7 +3,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_redux_overview/app/redux/app_state.dart';
 import 'package:flutter_redux_overview/feature/common/component/card_list.dart';
 import 'package:flutter_redux_overview/feature/common/model/loading_status.dart';
-import 'package:flutter_redux_overview/feature/user/model/user.dart';
+import 'package:flutter_redux_overview/data/model/user.dart';
 import 'package:flutter_redux_overview/feature/user/redux/user_actions.dart';
 import 'package:flutter_redux_overview/feature/user/view/user_screen_view_model.dart';
 import 'package:flutter_redux_overview/generated/l10n.dart';

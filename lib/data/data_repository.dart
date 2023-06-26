@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_redux_overview/data/api_constants.dart';
 import 'package:flutter_redux_overview/data/network_exception.dart';
-import 'package:flutter_redux_overview/feature/post/model/post.dart';
-import 'package:flutter_redux_overview/feature/user/model/user.dart';
+import 'package:flutter_redux_overview/data/model/post.dart';
+import 'package:flutter_redux_overview/data/model/user.dart';
 
 class DataRepository {
   final Dio client;

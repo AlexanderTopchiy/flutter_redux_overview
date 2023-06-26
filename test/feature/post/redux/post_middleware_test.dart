@@ -1,5 +1,5 @@
 import 'package:flutter_redux_overview/data/network_exception.dart';
-import 'package:flutter_redux_overview/feature/post/model/post.dart';
+import 'package:flutter_redux_overview/data/model/post.dart';
 import 'package:flutter_redux_overview/feature/post/redux/post_actions.dart';
 import 'package:flutter_redux_overview/feature/post/redux/post_middleware.dart';
 import 'package:flutter_test/flutter_test.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter_redux_overview/data/network_exception.dart';
-import 'package:flutter_redux_overview/feature/user/model/user.dart';
+import 'package:flutter_redux_overview/data/model/user.dart';
 import 'package:flutter_redux_overview/feature/user/redux/user_actions.dart';
 import 'package:flutter_redux_overview/feature/user/redux/user_middleware.dart';
 import 'package:flutter_test/flutter_test.dart';

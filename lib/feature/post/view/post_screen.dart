@@ -41,7 +41,7 @@ class _PostScreenContent extends StatelessWidget {
         child: switch (viewModel.status) {
           LoadingStatus.idle || LoadingStatus.loading => const Center(child: CircularProgressIndicator()),
           LoadingStatus.success => CardList<Post>(itemList: viewModel.postList),
-          LoadingStatus.error => Text(S.current.networkError),
+          LoadingStatus.error => Center(child: Text(S.current.networkError)),
         },
       ),
     );
